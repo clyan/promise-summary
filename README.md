@@ -1,2 +1,19 @@
-# promise-summary
-promise总结分享
+1. 为什么有需要异步
+2. 实现异步的多种方式
+3. 微任务与宏任务
+   1. callback
+   2. generator
+   3. promise
+   4. async await
+4. Promise
+   1. all
+   2. any
+   3. allSettled
+   4. race
+   以上方法的核心特点： 根据传入的集合，决定新返回的promise的状态及其返回值
+   5. resolve
+   6. reject
+   7. then
+   8. catch
+   9.  finally
+5. Vue.nextick的实现原理
