@@ -1,0 +1,26 @@
+"use strict";
+
+var _require = require("./util"),
+    asyncFulfilledTask = _require.asyncFulfilledTask,
+    asyncRejectedTask = _require.asyncRejectedTask; // 核心： 全部成功则成功
+// all接收，数组、Set、 Map集合
+// 返回: promise
+
+
+var fulfilledPromise = Promise.all([1, new Set(), asyncFulfilledTask(1, 2000)]);
+console.log(fulfilledPromise);
+fulfilledPromise.then(function (res) {
+  console.log(res);
+});
+var rejectPromise = Promise.all([1, new Set(), asyncRejectedTask(1, 2000)]);
+console.log(rejectPromise);
+rejectPromise.then(function (res) {
+  console.log(res);
+});
+var data = Promise.all([1, new Set(), 1]); // 谁先输出，为什么
+
+console.log(data);
+console.log(1);
+data.then(function (res) {
+  console.log(res);
+});
