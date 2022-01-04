@@ -14,6 +14,7 @@ function sequenceTasks(tasks) {
     return promise.then(task).then(pushValue);
   }, Promise.resolve());
 }
+
 function A() {
     return new Promise((resolve) => {
         setTimeout(()=> {
@@ -22,6 +23,7 @@ function A() {
         }, 2000) 
     })
 }
+
 function B() {
     return new Promise((resolve) => {
         setTimeout(()=> {
@@ -29,7 +31,7 @@ function B() {
             resolve('B')
         }, 1000) 
     })
-}  
+}
 
 const result = sequenceTasks([A,B])
 result.then(res=> {

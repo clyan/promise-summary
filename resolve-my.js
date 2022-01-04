@@ -15,7 +15,7 @@ Promise.resolve = function(data) {
     })
 }
 let thenable = {
-    then: (resolve, reject) => {
+    then: (resolve) => {
       resolve(123)
     }
 }
