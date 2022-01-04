@@ -11,7 +11,7 @@ fulfilledPromise.then((res) => {
 })
 
 
-const  rejectPromise = Promise.race([asyncFulfilledTask(2, 2000), asyncFulfilledTask(3, 1000), asyncRejectedTask(4, 3000)])
+const  rejectPromise = Promise.race([asyncFulfilledTask(2, 2000), asyncFulfilledTask(3, 1000), asyncRejectedTask(4, 500)])
 console.log(rejectPromise)
 rejectPromise.then((res) => {
     console.log(res)
@@ -21,7 +21,7 @@ rejectPromise.then((res) => {
 const  data = Promise.race([1, new Set(), 1])
 
 // 谁先输出，为什么
-console.log(data)
+console.log("data", data)
 
 data.then((res) => {
     console.log(res)
